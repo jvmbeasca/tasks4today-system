@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 19, 2026 at 08:17 AM
+-- Generation Time: Oct 02, 2026 at 07:08 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `tasks4today_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customers`
+--
+
+CREATE TABLE `customers` (
+  `id` int(11) NOT NULL,
+  `full_name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `created_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`id`, `full_name`, `email`, `phone`, `created_at`) VALUES
+(1, 'John Vincent M. Beasca', 'jmbeasca@fit.edu.ph', '09123456789', '2026-10-02 13:04:30');
 
 -- --------------------------------------------------------
 
@@ -59,6 +80,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `full_name` varchar(100) NOT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
   `email` varchar(100) NOT NULL,
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -67,12 +89,19 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `full_name`, `email`, `created_at`) VALUES
-(1, 'jvbeasca', 'John Vincent Beasca', 'jmbeasca@fit.edu.ph', '2026-09-19 13:57:45');
+INSERT INTO `users` (`id`, `username`, `full_name`, `avatar`, `email`, `created_at`) VALUES
+(1, 'jvbeasca', 'John Vincent Beasca', NULL, 'jmbeasca@fit.edu.ph', '2026-09-19 13:57:45'),
+(2, 'The GOAT', 'LeBron Raymone James', '1790917555_2c8dac198217bedcc6b4.jpg', '', '2026-10-02 12:58:57');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `customers`
+--
+ALTER TABLE `customers`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tasks`
@@ -92,6 +121,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
@@ -101,7 +136,7 @@ ALTER TABLE `tasks`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

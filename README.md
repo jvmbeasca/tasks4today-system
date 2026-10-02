@@ -1,43 +1,31 @@
-# Tasks for Today Management System
+# Tasks4Today System
 
-A CodeIgniter 4 task-management application developed for the
-IT0049 Technical Summative Assessment 1.
+A CodeIgniter 4 web application for managing customer and user records.
 
-## Pages
+## Features
 
-- Welcome page showing tasks scheduled for today
-- Task List page showing every task ordered by date
-- Profile page showing one demonstration user
-- About page identifying the developer
+- Customer create and edit
+- User create and edit
+- Form validation
+- Duplicate username validation
+- Avatar upload validation
+- Responsive modern design
+- MySQL database integration
 
-## Technologies
+## Requirements
 
 - PHP
-- CodeIgniter 4
 - MySQL
-- HTML
-- CSS
+- XAMPP
+- CodeIgniter 4
 
-## Local Installation
+## Local Setup
 
-1. Download the repository.
-2. Run `composer install`.
-3. Rename `env` to `.env`.
-4. Create a MySQL database.
-5. Import `database/tasks4today_db.sql`.
-6. Configure the database details in `.env`.
-7. Run `php spark serve`.
-8. Visit `http://localhost:8080`.
+1. Copy the project into `xampp/htdocs`.
+2. Create a `.env` file from the `env` file.
+3. Configure the database connection.
+4. Import the SQL file from the `database` folder.
+5. Run:
 
-## Database
-
-Database name: `tasks4today_db`
-
-Tables:
-
-- `tasks`
-- `users`
-
-## Developer
-
-John Vincent Beasca
+```text
+php spark serve
